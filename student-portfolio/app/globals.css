@@ -1,0 +1,605 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 72.2% 50.6%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 72.2% 50.6%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@font-face {
+  font-family: "OMORI";
+  src: url("/fonts/omori.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-omori {
+  font-family: "OMORI", monospace;
+  letter-spacing: 0.05em;
+}
+
+/* OMORI-style dialogue box */
+.omori-dialogue {
+  position: relative;
+  background-color: rgba(76, 29, 149, 0.8);
+  box-shadow: 0 0 0 2px #c084fc, 4px 4px 0 2px rgba(192, 132, 252, 0.2);
+}
+
+.omori-dialogue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2dd4bf, #c084fc);
+}
+
+/* OMORI-style cards */
+.omori-card {
+  position: relative;
+  box-shadow: 4px 4px 0 0 rgba(192, 132, 252, 0.3);
+  transition: all 0.2s ease;
+}
+
+.omori-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 0 rgba(192, 132, 252, 0.4);
+}
+
+/* OMORI-style box */
+.omori-box {
+  position: relative;
+  box-shadow: 4px 4px 0 0 rgba(192, 132, 252, 0.3);
+  transition: all 0.2s ease;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.omori-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(192, 132, 252, 0.05),
+    rgba(192, 132, 252, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+/* Stars background */
+.stars-bg {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Project icon container */
+.project-icon-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add these new star styles at the end of the file */
+
+/* Star shapes */
+.star-tiny {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star-small {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.star-medium {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: twinkle 7s infinite ease-in-out;
+}
+
+.star-large {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+  animation: twinkle 9s infinite ease-in-out;
+}
+
+.star-custom {
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Star animations */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes float-reverse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Interactive animations */
+@keyframes button-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(192, 132, 252, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(192, 132, 252, 0);
+  }
+}
+
+@keyframes section-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(45, 212, 191, 0.5), -0.05em -0.025em 0 rgba(192, 132, 252, 0.5);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(45, 212, 191, 0.5), -0.05em -0.025em 0 rgba(192, 132, 252, 0.5);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(45, 212, 191, 0.5), 0.025em 0.025em 0 rgba(192, 132, 252, 0.5);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(45, 212, 191, 0.5), 0.025em 0.025em 0 rgba(192, 132, 252, 0.5);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(45, 212, 191, 0.5), 0.05em 0 0 rgba(192, 132, 252, 0.5);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(45, 212, 191, 0.5), 0.05em 0 0 rgba(192, 132, 252, 0.5);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(45, 212, 191, 0.5), -0.025em -0.025em 0 rgba(192, 132, 252, 0.5);
+  }
+}
+
+@keyframes card-hover {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(-2px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes rotate-colors {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes pixel-shift {
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    clip-path: inset(0 0 5px 0);
+  }
+  40% {
+    clip-path: inset(10px 0 0 0);
+  }
+  60% {
+    clip-path: inset(0 5px 0 10px);
+  }
+  80% {
+    clip-path: inset(5px 0 10px 0);
+  }
+}
+
+/* Interactive classes */
+.btn-interactive {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-interactive:hover {
+  transform: translateY(-3px);
+}
+
+.btn-interactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.btn-interactive:hover::before {
+  left: 100%;
+}
+
+.btn-interactive:active {
+  transform: translateY(1px);
+}
+
+.text-glitch {
+  animation: text-glitch 3s infinite linear alternate-reverse;
+}
+
+.text-glitch-hover:hover {
+  animation: text-glitch 1.5s infinite linear alternate-reverse;
+}
+
+.card-interactive {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-interactive:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 15px 30px -10px rgba(192, 132, 252, 0.4);
+}
+
+.card-interactive:active {
+  transform: translateY(-2px);
+}
+
+.section-interactive {
+  transition: all 0.5s ease;
+  opacity: 0.95;
+}
+
+.section-interactive:hover {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+.pixel-shift-hover:hover {
+  animation: pixel-shift 0.5s steps(5) forwards;
+}
+
+.rotate-colors-hover:hover {
+  animation: rotate-colors 2s linear infinite;
+}
+
+.shake-hover:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Interactive dialogue */
+.omori-dialogue-interactive {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.omori-dialogue-interactive::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #c084fc;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: button-pulse 2s infinite;
+}
+
+.omori-dialogue-interactive:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.3);
+}
+
+/* Interactive navigation */
+.nav-link-interactive {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link-interactive::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2dd4bf, #c084fc);
+  transition: width 0.3s ease;
+}
+
+.nav-link-interactive:hover::after {
+  width: 100%;
+}
+
+/* Interactive icons */
+.icon-interactive {
+  transition: all 0.3s ease;
+}
+
+.icon-interactive:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 5px rgba(192, 132, 252, 0.7));
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Interactive cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(192, 132, 252, 0.3);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: screen;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(45, 212, 191, 0.2);
+}
+
+/* Add these to your existing globals.css */
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  }
+}
+
+.planet-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.planet-spin {
+  animation: spin 10s linear infinite;
+}
+
+.planet-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.planet-system {
+  perspective: 1000px;
+}
+
+.dark-gradient {
+  background: linear-gradient(to bottom, #0c041a, #15082b);
+}
