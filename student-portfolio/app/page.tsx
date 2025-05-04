@@ -16,16 +16,13 @@ import {
   Star,
   Coffee,
   Gamepad2,
-  Sparkles,
-  ImageIcon,
 } from "lucide-react"
 import Link from "next/link"
 import ScrollReveal from "@/components/scroll-reveal"
 import Planet from "@/components/planet"
-import PlanetSystem from "@/components/planet-system"
 import MobileMenu from "@/components/mobile-menu"
 import EducationTimeline from "@/components/education-timeline"
-import ProjectGallery from "@/components/project-gallery"
+import PlanetMiniGame from "@/components/planet-mini-game"
 
 export default function Home() {
   return (
@@ -78,16 +75,16 @@ export default function Home() {
               PROJECTS
             </Link>
             <Link
-              href="#gallery"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              GALLERY
-            </Link>
-            <Link
               href="#education"
               className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
             >
               EDUCATION
+            </Link>
+            <Link
+              href="#game"
+              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
+            >
+              MINI-GAME
             </Link>
             <Link
               href="#contact"
@@ -117,15 +114,6 @@ export default function Home() {
           </div>
           <div className="absolute bottom-20 left-10 animate-float">
             <Star className="h-4 w-4 text-teal-400 icon-interactive" />
-          </div>
-          <div className="absolute top-10 left-10 animate-float-slow">
-            <Star className="h-5 w-5 text-pink-400 icon-interactive" />
-          </div>
-          <div className="absolute top-40 right-20 animate-float-reverse">
-            <Sparkles className="h-4 w-4 text-yellow-300 icon-interactive" />
-          </div>
-          <div className="absolute bottom-40 left-20 animate-pulse-slow">
-            <div className="star-custom bg-teal-400 icon-interactive"></div>
           </div>
 
           <ScrollReveal>
@@ -226,15 +214,14 @@ export default function Home() {
           <div className="container">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
-                <div className="md:w-1/2">
+                <div className="md:w-1/3">
                   <div className="omori-box p-4 sm:p-6 border-2 border-purple-400 bg-darkPurple-900/80 relative card-interactive">
                     <div className="absolute -top-4 -right-4">
                       <Star className="h-8 w-8 text-yellow-300 animate-pulse icon-interactive" />
                     </div>
                     <div className="text-center">
-                      <div className="text-4xl md:text-6xl font-omori text-teal-400 mb-4 text-glitch-hover">HELLO</div>
-                      <div className="text-xl md:text-2xl font-omori text-purple-200 mb-2">WELCOME TO MY</div>
-                      <div className="text-2xl md:text-3xl font-omori text-pink-400 mb-6">PORTFOLIO</div>
+                      <div className="text-4xl md:text-6xl font-omori text-teal-400 mb-4 text-glitch-hover">A</div>
+                      <div className="text-2xl md:text-3xl font-omori text-pink-400 mb-6">DEVELOPER</div>
                       <div className="flex justify-center gap-4">
                         <div className="w-4 h-4 bg-teal-400 shake-hover"></div>
                         <div className="w-4 h-4 bg-pink-400 shake-hover"></div>
@@ -243,7 +230,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/2">
+                <div className="md:w-2/3">
                   <div className="omori-dialogue p-4 sm:p-6 border-2 border-purple-400 relative bg-darkPurple-900/80 omori-dialogue-interactive">
                     <h2 className="text-2xl md:text-3xl font-omori mb-4 md:mb-6 flex items-center gap-2 text-teal-400 text-glitch-hover">
                       <User className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
@@ -255,11 +242,10 @@ export default function Home() {
                       ever since.
                     </p>
 
-                    <PlanetSystem className="mb-6" />
-
                     <p className="text-base md:text-lg text-purple-200 mb-6">
                       As I prepare to enter university to study Computer Science, I'm excited to expand my knowledge and
-                      collaborate with like-minded individuals on innovative projects.
+                      collaborate with like-minded individuals on innovative projects. I enjoy solving complex problems
+                      and creating elegant solutions that make a positive impact.
                     </p>
                     <Button
                       className="bg-teal-500 hover:bg-teal-600 text-purple-950 font-omori btn-interactive"
@@ -275,36 +261,14 @@ export default function Home() {
               </div>
             </ScrollReveal>
           </div>
-          <div className="absolute top-10 left-10 animate-float-reverse">
-            <Star className="h-4 w-4 text-pink-400 icon-interactive" />
-          </div>
-          <div className="absolute bottom-10 right-10 animate-pulse-slow">
-            <div className="star-custom bg-yellow-300 icon-interactive"></div>
-          </div>
         </section>
 
         {/* Skills Section */}
         <section id="skills" className="py-16 md:py-20 container relative">
-          <div className="absolute top-10 right-10 animate-float">
-            <Star className="h-5 w-5 text-pink-400 icon-interactive" />
-          </div>
-          <div className="absolute bottom-10 left-10 animate-float-slow">
-            <Star className="h-7 w-7 text-yellow-300 icon-interactive" />
-          </div>
-          <div className="absolute top-40 left-20 animate-float-reverse">
-            <Sparkles className="h-5 w-5 text-teal-400 icon-interactive" />
-          </div>
-          <div className="absolute bottom-40 right-20 animate-pulse-slow">
-            <div className="star-custom bg-pink-400 icon-interactive"></div>
-          </div>
-
           <ScrollReveal>
             <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
               <Code className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
               TECHNICAL SKILLS
-              <div className="inline-block ml-2">
-                <Planet type="yellow" size="tiny" />
-              </div>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <ScrollReveal delay={200}>
@@ -394,27 +358,11 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="absolute top-10 left-10 animate-float-slow">
-            <Star className="h-6 w-6 text-teal-400 icon-interactive" />
-          </div>
-          <div className="absolute bottom-10 right-10 animate-float">
-            <Star className="h-4 w-4 text-pink-400 icon-interactive" />
-          </div>
-          <div className="absolute top-40 right-20 animate-float-reverse">
-            <Sparkles className="h-4 w-4 text-yellow-300 icon-interactive" />
-          </div>
-          <div className="absolute bottom-40 left-40 animate-pulse-slow">
-            <div className="star-custom bg-teal-400 icon-interactive"></div>
-          </div>
-
           <div className="container">
             <ScrollReveal>
               <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
                 <Briefcase className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
                 MY PROJECTS
-                <div className="inline-block ml-2">
-                  <Planet type="pink" size="tiny" />
-                </div>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {/* Project 1: TelDisBot */}
@@ -615,76 +563,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Gallery Section */}
-        <section id="gallery" className="py-16 md:py-20 container relative">
-          <div className="absolute top-10 right-10 animate-float">
-            <Star className="h-6 w-6 text-yellow-300 icon-interactive" />
-          </div>
-          <div className="absolute bottom-10 left-10 animate-float-slow">
-            <Star className="h-4 w-4 text-pink-400 icon-interactive" />
-          </div>
-          <div className="absolute top-40 left-20 animate-float-reverse">
-            <Sparkles className="h-5 w-5 text-teal-400 icon-interactive" />
-          </div>
-          <div className="absolute bottom-40 right-20 animate-pulse-slow">
-            <div className="star-custom bg-pink-400 icon-interactive"></div>
-          </div>
-
-          <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
-              <ImageIcon className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
-              PROJECT GALLERY
-              <div className="inline-block ml-2">
-                <Planet type="blue" size="tiny" />
-              </div>
-            </h2>
-            <ProjectGallery />
-          </ScrollReveal>
-        </section>
-
         {/* Education Section */}
-        <section id="education" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="absolute top-20 left-20 animate-float">
-            <Star className="h-5 w-5 text-yellow-300" />
-          </div>
-          <div className="absolute bottom-20 right-20 animate-float-slow">
-            <Star className="h-6 w-6 text-teal-400" />
-          </div>
-          <div className="absolute top-40 right-40 animate-float-reverse">
-            <Sparkles className="h-5 w-5 text-pink-400" />
-          </div>
-          <div className="absolute bottom-60 left-20 animate-pulse-slow">
-            <div className="star-custom bg-yellow-300"></div>
-          </div>
-
+        <section id="education" className="py-16 md:py-20 container relative">
           <div className="container">
             <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
               <BookOpen className="h-5 w-5 md:h-6 md:w-6" />
               EDUCATION & EXPERIENCE
             </h2>
 
-            {/* Replace the old education cards with the new interactive timeline */}
             <div className="max-w-3xl mx-auto">
               <EducationTimeline />
             </div>
           </div>
         </section>
 
+        {/* Mini-Game Section */}
+        <section id="game" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
+          <div className="container">
+            <ScrollReveal>
+              <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
+                <Gamepad2 className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
+                PLANET COLLECTOR MINI-GAME
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <Card className="bg-darkPurple-900/80 border-2 border-purple-400 text-white omori-card">
+                  <CardHeader>
+                    <CardTitle className="font-omori text-teal-400">PLANET COLLECTOR</CardTitle>
+                    <CardDescription className="text-purple-200">
+                      Click on the planets to collect them before time runs out! How many can you collect in 30 seconds?
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="h-[400px]">
+                      <PlanetMiniGame />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="absolute top-10 right-10 animate-float">
-            <Star className="h-6 w-6 text-pink-400" />
-          </div>
-          <div className="absolute bottom-10 left-10 animate-float-slow">
-            <Star className="h-4 w-4 text-teal-400" />
-          </div>
-          <div className="absolute top-40 left-40 animate-float-reverse">
-            <Sparkles className="h-4 w-4 text-teal-400" />
-          </div>
-          <div className="absolute bottom-40 right-40 animate-pulse-slow">
-            <div className="star-custom bg-pink-400"></div>
-          </div>
-
           <div className="container">
             <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
               <Mail className="h-5 w-5 md:h-6 md:w-6" />
@@ -738,12 +659,7 @@ export default function Home() {
                 </CardContent>
               </Card>
               <div className="mt-8 text-center">
-                <p className="text-purple-200 mb-4 flex items-center justify-center">
-                  Or connect with me directly:
-                  <span className="inline-block ml-2">
-                    <Planet type="purple" size="tiny" />
-                  </span>
-                </p>
+                <p className="text-purple-200 mb-4 flex items-center justify-center">Or connect with me directly:</p>
                 <div className="flex justify-center gap-4">
                   <Button
                     variant="outline"
