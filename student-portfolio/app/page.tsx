@@ -17,6 +17,7 @@ import {
   Coffee,
   Gamepad2,
   Sparkles,
+  ImageIcon,
 } from "lucide-react"
 import Link from "next/link"
 import ScrollReveal from "@/components/scroll-reveal"
@@ -24,13 +25,14 @@ import Planet from "@/components/planet"
 import PlanetSystem from "@/components/planet-system"
 import MobileMenu from "@/components/mobile-menu"
 import EducationTimeline from "@/components/education-timeline"
+import ProjectGallery from "@/components/project-gallery"
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-darkPurple-950 text-white font-omori dark-gradient">
+    <div className="min-h-screen flex flex-col bg-darkPurple-950 text-foreground font-omori dark:dark-gradient light:light-gradient theme-transition">
       {/* Stars background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-darkPurple-950 to-darkPurple-900 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-darkPurple-950 to-darkPurple-900 opacity-80 dark:opacity-80 light:opacity-40 theme-transition"></div>
         <div className="absolute inset-0 stars-bg"></div>
       </div>
       <div className="fixed inset-0 pointer-events-none z-1">
@@ -48,10 +50,10 @@ export default function Home() {
 
       {/* Glitch overlay */}
       <div className="fixed inset-0 pointer-events-none z-50 opacity-10">
-        <div className="absolute inset-0 bg-[url('/noise.png')] mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-noise"></div>
       </div>
 
-      <header className="sticky top-0 z-10 bg-darkPurple-950/80 backdrop-blur-sm border-b border-purple-400/10">
+      <header className="sticky top-0 z-10 bg-darkPurple-950/80 backdrop-blur-sm border-b border-purple-400/10 theme-transition">
         <div className="container flex items-center justify-between h-16">
           <Link href="/" className="font-omori text-xl">
             <span className="text-teal-400">Dev</span>Portfolio
@@ -74,6 +76,12 @@ export default function Home() {
               className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
             >
               PROJECTS
+            </Link>
+            <Link
+              href="#gallery"
+              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
+            >
+              GALLERY
             </Link>
             <Link
               href="#education"
@@ -214,7 +222,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-20 bg-darkPurple-900/20">
+        <section id="about" className="py-16 md:py-20 bg-darkPurple-900/20 theme-transition">
           <div className="container">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
@@ -607,8 +615,35 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Gallery Section */}
+        <section id="gallery" className="py-16 md:py-20 container relative">
+          <div className="absolute top-10 right-10 animate-float">
+            <Star className="h-6 w-6 text-yellow-300 icon-interactive" />
+          </div>
+          <div className="absolute bottom-10 left-10 animate-float-slow">
+            <Star className="h-4 w-4 text-pink-400 icon-interactive" />
+          </div>
+          <div className="absolute top-40 left-20 animate-float-reverse">
+            <Sparkles className="h-5 w-5 text-teal-400 icon-interactive" />
+          </div>
+          <div className="absolute bottom-40 right-20 animate-pulse-slow">
+            <div className="star-custom bg-pink-400 icon-interactive"></div>
+          </div>
+
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
+              <ImageIcon className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
+              PROJECT GALLERY
+              <div className="inline-block ml-2">
+                <Planet type="blue" size="tiny" />
+              </div>
+            </h2>
+            <ProjectGallery />
+          </ScrollReveal>
+        </section>
+
         {/* Education Section */}
-        <section id="education" className="py-16 md:py-20 container relative">
+        <section id="education" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
           <div className="absolute top-20 left-20 animate-float">
             <Star className="h-5 w-5 text-yellow-300" />
           </div>
@@ -622,14 +657,16 @@ export default function Home() {
             <div className="star-custom bg-yellow-300"></div>
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
-            <BookOpen className="h-5 w-5 md:h-6 md:w-6" />
-            EDUCATION & EXPERIENCE
-          </h2>
+          <div className="container">
+            <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
+              <BookOpen className="h-5 w-5 md:h-6 md:w-6" />
+              EDUCATION & EXPERIENCE
+            </h2>
 
-          {/* Replace the old education cards with the new interactive timeline */}
-          <div className="max-w-3xl mx-auto">
-            <EducationTimeline />
+            {/* Replace the old education cards with the new interactive timeline */}
+            <div className="max-w-3xl mx-auto">
+              <EducationTimeline />
+            </div>
           </div>
         </section>
 
@@ -773,7 +810,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-purple-400/10 py-6 bg-darkPurple-950">
+      <footer className="border-t border-purple-400/10 py-6 bg-darkPurple-950 theme-transition">
         <div className="container flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-purple-300">
             © {new Date().getFullYear()} Sukovatitsyn Alexey. All rights reserved.

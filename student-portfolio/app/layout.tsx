@@ -3,6 +3,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import CustomCursor from "@/components/custom-cursor"
 import FloatingPlanets from "@/components/floating-planets"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export const metadata = {
   title: "Sukovatitsyn Alexey | Developer Portfolio",
@@ -17,8 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className="transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeToggle />
+          </div>
+          <div className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-500">
+            <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay"></div>
+          </div>
           <FloatingPlanets />
           {children}
           <CustomCursor />

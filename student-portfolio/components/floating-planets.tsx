@@ -4,11 +4,14 @@ import { useEffect, useState, useRef } from "react"
 import Planet from "./planet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import type { JSX } from "react"
+import { useTheme } from "next-themes"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function FloatingPlanets() {
   const [planets, setPlanets] = useState<JSX.Element[]>([])
   const isMobile = useMediaQuery("(max-width: 768px)")
   const initialized = useRef(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (initialized.current) return
@@ -29,9 +32,12 @@ export default function FloatingPlanets() {
       const animationDuration = `${15 + Math.random() * 20}s`
 
       return (
-        <div
+        <motion.div
           key={i}
           className="absolute z-10 pointer-events-auto"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: i * 0.2 }}
           style={{
             top,
             left,
@@ -47,12 +53,22 @@ export default function FloatingPlanets() {
             hasFace={true}
             interactive={!isMobile} // Disable interactivity on mobile for better performance
           />
-        </div>
+        </motion.div>
       )
     })
 
     setPlanets(newPlanets)
   }, [isMobile])
 
-  return <div className="fixed inset-0 pointer-events-none">{planets}</div>
+  return (
+    <div className="fixed inset-0 pointer-events-none transition-opacity duration-500">
+      <AnimatePresence>
+        {planets.map((planet, index) => (
+          <motion.div key={index} exit={{ opacity: 0, scale: 0 }} transition={{ duration: 0.5 }}>
+            {planet}
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  )
 }
