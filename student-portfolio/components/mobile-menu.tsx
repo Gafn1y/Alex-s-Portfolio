@@ -22,7 +22,7 @@ export default function MobileMenu() {
       <Button
         variant="outline"
         size="sm"
-        className="border-purple-400/20 hover:bg-purple-800/30 text-teal-400 h-9 w-9 p-0"
+        className="border-purple-400/20 hover:bg-purple-800/30 text-teal-400 h-9 w-9 p-0 relative z-20"
         onClick={toggleMenu}
       >
         {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -35,7 +35,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-14 left-0 right-0 bg-darkPurple-950/95 backdrop-blur-md border-b border-purple-400/10 z-50"
+            className="absolute top-14 left-0 right-0 bg-darkPurple-950/95 backdrop-blur-md border-b border-purple-400/10 z-10"
           >
             <nav className="flex flex-col p-4 gap-3">
               <Link

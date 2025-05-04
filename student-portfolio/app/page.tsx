@@ -20,9 +20,9 @@ import {
 import Link from "next/link"
 import ScrollReveal from "@/components/scroll-reveal"
 import Planet from "@/components/planet"
-import MobileMenu from "@/components/mobile-menu"
 import EducationTimeline from "@/components/education-timeline"
 import PlanetMiniGame from "@/components/planet-mini-game"
+import Header from "@/components/header"
 
 export default function Home() {
   return (
@@ -50,61 +50,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-noise"></div>
       </div>
 
-      <header className="sticky top-0 z-10 bg-darkPurple-950/80 backdrop-blur-sm border-b border-purple-400/10 theme-transition">
-        <div className="container px-4 sm:px-6 flex items-center justify-between h-14 md:h-16">
-          <Link href="/" className="font-omori text-lg md:text-xl">
-            <span className="text-teal-400">Dev</span>Portfolio
-          </Link>
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-            <Link
-              href="#about"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              ABOUT
-            </Link>
-            <Link
-              href="#skills"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              SKILLS
-            </Link>
-            <Link
-              href="#projects"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              PROJECTS
-            </Link>
-            <Link
-              href="#education"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              EDUCATION
-            </Link>
-            <Link
-              href="#game"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              MINI-GAME
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-            >
-              CONTACT
-            </Link>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              className="border-purple-400/20 hover:bg-purple-800/30 font-omori text-teal-400 btn-interactive hidden md:flex text-sm"
-              asChild
-            >
-              <Link href="#contact">GET IN TOUCH</Link>
-            </Button>
-            <MobileMenu />
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1 relative z-1">
         {/* Hero Section */}

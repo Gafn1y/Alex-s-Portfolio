@@ -34,15 +34,15 @@
 
     --radius: 0.5rem;
 
-    /* Custom colors for light theme */
-    --bg-main: 250 20% 95%;
-    --bg-card: 250 20% 98%;
-    --bg-card-hover: 250 20% 96%;
-    --text-primary: 250 20% 20%;
-    --text-secondary: 250 20% 40%;
+    /* Custom colors for light theme - Enhanced with more purple */
+    --bg-main: 260 30% 95%;
+    --bg-card: 260 30% 98%;
+    --bg-card-hover: 260 30% 96%;
+    --text-primary: 260 30% 20%;
+    --text-secondary: 260 30% 40%;
     --accent-primary: 180 70% 40%;
     --accent-secondary: 300 70% 70%;
-    --border-light: 250 20% 80%;
+    --border-light: 260 30% 80%;
   }
 
   .dark {
@@ -641,7 +641,7 @@
 }
 
 .light-gradient {
-  background: linear-gradient(to bottom, #f8f7fc, #eeeaf9);
+  background: linear-gradient(to bottom, #f3effc, #dcd0f7);
   transition: background 0.5s ease;
 }
 
@@ -659,19 +659,19 @@
   transition: opacity 0.5s ease;
 }
 
-/* Light theme adjustments - Version 19 style */
+/* Light theme adjustments - Enhanced purple version */
 .light .bg-darkPurple-950 {
-  background-color: #f8f7fc;
+  background-color: #f3effc;
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-900 {
-  background-color: #eeeaf9;
+  background-color: #e8e0f9;
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-800 {
-  background-color: #e4dff6;
+  background-color: #dcd0f7;
   transition: background-color 0.5s ease;
 }
 
@@ -696,32 +696,32 @@
 }
 
 .light .bg-purple-900 {
-  background-color: #f8f7fc;
+  background-color: #e8e0f9;
   transition: background-color 0.5s ease;
 }
 
 .light .bg-purple-800 {
-  background-color: #eeeaf9;
+  background-color: #dcd0f7;
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-900\/80 {
-  background-color: rgba(238, 234, 249, 0.8);
+  background-color: rgba(232, 224, 249, 0.8);
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-900\/20 {
-  background-color: rgba(238, 234, 249, 0.2);
+  background-color: rgba(232, 224, 249, 0.2);
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-950\/80 {
-  background-color: rgba(248, 247, 252, 0.8);
+  background-color: rgba(243, 239, 252, 0.8);
   transition: background-color 0.5s ease;
 }
 
 .light .bg-darkPurple-950\/50 {
-  background-color: rgba(248, 247, 252, 0.5);
+  background-color: rgba(243, 239, 252, 0.5);
   transition: background-color 0.5s ease;
 }
 
