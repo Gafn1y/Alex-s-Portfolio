@@ -785,3 +785,77 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 20;
 }
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .omori-dialogue {
+    padding: 0.75rem;
+  }
+
+  .omori-dialogue::before {
+    height: 3px;
+  }
+
+  .omori-card {
+    box-shadow: 3px 3px 0 0 rgba(192, 132, 252, 0.3);
+  }
+
+  .btn-interactive:hover {
+    transform: translateY(-2px);
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-5px) rotate(0.5deg);
+    box-shadow: 0 10px 20px -8px rgba(192, 132, 252, 0.4);
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+
+  .text-glitch-hover:hover {
+    animation: none;
+  }
+
+  .icon-interactive:hover {
+    transform: scale(1.1);
+  }
+
+  /* Adjust game container for mobile */
+  .game-container {
+    height: 300px;
+  }
+
+  /* Improve touch targets for mobile */
+  .game-planet {
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  /* Adjust spacing for mobile */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    word-break: break-word;
+  }
+}
+
+/* Improve form elements on mobile */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

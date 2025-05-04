@@ -4,7 +4,6 @@ import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Calendar, Award, Briefcase, Star } from "lucide-react"
-import Planet from "./planet"
 
 interface TimelineItem {
   id: string
@@ -103,7 +102,7 @@ export default function EducationTimeline() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {timelineItems.map((item) => (
         <motion.div
           key={item.id}
@@ -117,31 +116,24 @@ export default function EducationTimeline() {
             }`}
             onClick={() => toggleItem(item.id)}
           >
-            <CardHeader className="flex flex-row items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="hidden sm:block">
-                  <Planet type={item.color} size="tiny" interactive={false} />
-                </div>
+            <CardHeader className="flex flex-row items-center justify-between p-4 md:p-6">
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="hidden sm:block">{getIcon(item.icon, item.color)}</div>
                 <div>
-                  <CardTitle className={`font-omori text-${item.color}-400`}>{item.title}</CardTitle>
-                  <CardDescription className="text-purple-300/90">
+                  <CardTitle className={`font-omori text-${item.color}-400 text-sm md:text-base`}>
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription className="text-purple-300/90 text-xs md:text-sm">
                     {item.organization} | {item.period}
                   </CardDescription>
                 </div>
               </div>
-              <div className="flex items-center">
-                {getIcon(item.icon, item.color)}
-                <motion.div
-                  animate={{ rotate: expandedItem === item.id ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="ml-2"
-                >
-                  <ChevronDown className="h-5 w-5 text-purple-300/90" />
-                </motion.div>
-              </div>
+              <motion.div animate={{ rotate: expandedItem === item.id ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-purple-300/90" />
+              </motion.div>
             </CardHeader>
-            <CardContent>
-              <p className="text-purple-200/90">{item.description}</p>
+            <CardContent className="px-4 pb-4 md:px-6 md:pb-6 pt-0">
+              <p className="text-purple-200/90 text-xs md:text-sm">{item.description}</p>
 
               <AnimatePresence>
                 {expandedItem === item.id && (
@@ -150,9 +142,9 @@ export default function EducationTimeline() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="mt-4 overflow-hidden"
+                    className="mt-3 md:mt-4 overflow-hidden"
                   >
-                    <ul className="space-y-2">
+                    <ul className="space-y-1 md:space-y-2">
                       {item.details.map((detail, index) => (
                         <motion.li
                           key={index}
@@ -161,8 +153,8 @@ export default function EducationTimeline() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
-                          <span className={`text-${item.color}-400 mr-2`}>•</span>
-                          <span className="text-purple-200/90">{detail}</span>
+                          <span className={`text-${item.color}-400 mr-2 text-xs md:text-sm`}>•</span>
+                          <span className="text-purple-200/90 text-xs md:text-sm">{detail}</span>
                         </motion.li>
                       ))}
                     </ul>

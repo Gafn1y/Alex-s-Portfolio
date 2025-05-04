@@ -21,11 +21,11 @@ export default function MobileMenu() {
     <div className="md:hidden">
       <Button
         variant="outline"
-        size="icon"
-        className="border-purple-400/20 hover:bg-purple-800/30 text-teal-400"
+        size="sm"
+        className="border-purple-400/20 hover:bg-purple-800/30 text-teal-400 h-9 w-9 p-0"
         onClick={toggleMenu}
       >
-        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
       </Button>
 
       <AnimatePresence>
@@ -35,9 +35,9 @@ export default function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-16 left-0 right-0 bg-darkPurple-950/95 backdrop-blur-md border-b border-purple-400/10 z-50"
+            className="absolute top-14 left-0 right-0 bg-darkPurple-950/95 backdrop-blur-md border-b border-purple-400/10 z-50"
           >
-            <nav className="flex flex-col p-4 gap-4">
+            <nav className="flex flex-col p-4 gap-3">
               <Link
                 href="#about"
                 className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
@@ -67,6 +67,13 @@ export default function MobileMenu() {
                 EDUCATION
               </Link>
               <Link
+                href="#game"
+                className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
+                onClick={closeMenu}
+              >
+                MINI-GAME
+              </Link>
+              <Link
                 href="#contact"
                 className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
                 onClick={closeMenu}
@@ -75,7 +82,7 @@ export default function MobileMenu() {
               </Link>
               <Button
                 variant="outline"
-                className="border-purple-400/20 hover:bg-purple-800/30 font-omori text-teal-400 btn-interactive w-full"
+                className="border-purple-400/20 hover:bg-purple-800/30 font-omori text-teal-400 btn-interactive w-full mt-2"
                 asChild
               >
                 <Link href="#contact" onClick={closeMenu}>

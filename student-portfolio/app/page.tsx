@@ -51,11 +51,11 @@ export default function Home() {
       </div>
 
       <header className="sticky top-0 z-10 bg-darkPurple-950/80 backdrop-blur-sm border-b border-purple-400/10 theme-transition">
-        <div className="container flex items-center justify-between h-16">
-          <Link href="/" className="font-omori text-xl">
+        <div className="container px-4 sm:px-6 flex items-center justify-between h-14 md:h-16">
+          <Link href="/" className="font-omori text-lg md:text-xl">
             <span className="text-teal-400">Dev</span>Portfolio
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
             <Link
               href="#about"
               className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
-              className="border-purple-400/20 hover:bg-purple-800/30 font-omori text-teal-400 btn-interactive hidden md:flex"
+              className="border-purple-400/20 hover:bg-purple-800/30 font-omori text-teal-400 btn-interactive hidden md:flex text-sm"
               asChild
             >
               <Link href="#contact">GET IN TOUCH</Link>
@@ -108,7 +108,7 @@ export default function Home() {
 
       <main className="flex-1 relative z-1">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 lg:py-32 container relative">
+        <section className="py-10 md:py-16 lg:py-24 container px-4 sm:px-6 relative">
           <div className="absolute top-20 right-10 animate-float-slow">
             <Star className="h-6 w-6 text-yellow-300 icon-interactive" />
           </div>
@@ -118,32 +118,32 @@ export default function Home() {
 
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center relative z-10">
-              <div className="mb-8 md:mb-12 relative">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto bg-purple-900 border-4 border-dashed border-teal-400 rounded-full flex items-center justify-center relative pixel-shift-hover">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-darkPurple-800 rounded-full flex items-center justify-center">
-                    <span className="text-4xl md:text-6xl font-omori text-teal-400 text-glitch-hover">A</span>
+              <div className="mb-6 md:mb-10 relative">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 mx-auto bg-purple-900 border-4 border-dashed border-teal-400 rounded-full flex items-center justify-center relative pixel-shift-hover">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 bg-darkPurple-800 rounded-full flex items-center justify-center">
+                    <span className="text-3xl md:text-6xl font-omori text-teal-400 text-glitch-hover">A</span>
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-300 rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-pink-400 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 bg-yellow-300 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 sm:w-6 sm:h-6 bg-pink-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
 
-              <div className="omori-dialogue mb-8 p-4 sm:p-6 border-2 border-purple-400 relative bg-darkPurple-900/80 omori-dialogue-interactive">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-omori tracking-tight mb-4 md:mb-6 text-glitch-hover">
+              <div className="omori-dialogue mb-6 md:mb-8 p-4 sm:p-6 border-2 border-purple-400 relative bg-darkPurple-900/80 omori-dialogue-interactive">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-omori tracking-tight mb-3 md:mb-5 text-glitch-hover">
                   Hi, I'm <span className="text-teal-400">ALEXEY</span>
-                  <div className="inline-block ml-4">
+                  <div className="inline-block ml-2 md:ml-4">
                     <Planet type="teal" size="small" hasRing={true} />
                   </div>
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl text-purple-200 mb-6 md:mb-8">
+                <p className="text-base sm:text-lg md:text-xl text-purple-200 mb-4 md:mb-6">
                   Software Engineer and Developer based in Kazakhstan with experience in Python, C++, and JavaScript.
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
                 <Button
-                  className="bg-teal-500 hover:bg-teal-600 text-purple-950 font-omori btn-interactive"
-                  size="lg"
+                  className="bg-teal-500 hover:bg-teal-600 text-purple-950 font-omori btn-interactive text-sm sm:text-base"
+                  size="default"
                   asChild
                 >
                   <Link href="#projects">
@@ -152,14 +152,14 @@ export default function Home() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-purple-400 hover:bg-purple-800/30 text-purple-200 font-omori btn-interactive"
-                  size="lg"
+                  className="border-purple-400 hover:bg-purple-800/30 text-purple-200 font-omori btn-interactive text-sm sm:text-base"
+                  size="default"
                   asChild
                 >
                   <Link href="#about">ABOUT ME</Link>
                 </Button>
               </div>
-              <div className="flex justify-center gap-4 mt-8 md:mt-12">
+              <div className="flex justify-center gap-4 mt-6 md:mt-10">
                 <Button
                   variant="outline"
                   size="icon"
@@ -167,7 +167,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="https://github.com/Gafn1y" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5" />
+                    <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="sr-only">GitHub</span>
                   </Link>
                 </Button>
@@ -178,7 +178,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>
                 </Button>
@@ -189,7 +189,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="mailto:alexey.sukovatitsyn@gmail.com">
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="sr-only">Email</span>
                   </Link>
                 </Button>
@@ -200,7 +200,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="tel:+7015068034">
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="sr-only">Phone</span>
                   </Link>
                 </Button>
@@ -210,43 +210,27 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-20 bg-darkPurple-900/20 theme-transition">
-          <div className="container">
+        <section id="about" className="py-12 md:py-16 bg-darkPurple-900/20 theme-transition">
+          <div className="container px-4 sm:px-6">
             <ScrollReveal>
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
-                <div className="md:w-1/3">
-                  <div className="omori-box p-4 sm:p-6 border-2 border-purple-400 bg-darkPurple-900/80 relative card-interactive">
-                    <div className="absolute -top-4 -right-4">
-                      <Star className="h-8 w-8 text-yellow-300 animate-pulse icon-interactive" />
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl md:text-6xl font-omori text-teal-400 mb-4 text-glitch-hover">A</div>
-                      <div className="text-2xl md:text-3xl font-omori text-pink-400 mb-6">DEVELOPER</div>
-                      <div className="flex justify-center gap-4">
-                        <div className="w-4 h-4 bg-teal-400 shake-hover"></div>
-                        <div className="w-4 h-4 bg-pink-400 shake-hover"></div>
-                        <div className="w-4 h-4 bg-yellow-300 shake-hover"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-2/3">
-                  <div className="omori-dialogue p-4 sm:p-6 border-2 border-purple-400 relative bg-darkPurple-900/80 omori-dialogue-interactive">
-                    <h2 className="text-2xl md:text-3xl font-omori mb-4 md:mb-6 flex items-center gap-2 text-teal-400 text-glitch-hover">
-                      <User className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
-                      ABOUT ME
-                    </h2>
-                    <p className="text-base md:text-lg text-purple-200 mb-4">
-                      I'm a passionate student developer with a keen interest in web development, mobile applications,
-                      and artificial intelligence. My journey in programming began when I was 10, and I've been hooked
-                      ever since.
-                    </p>
+              <div className="max-w-3xl mx-auto">
+                <div className="omori-dialogue p-4 sm:p-6 border-2 border-purple-400 relative bg-darkPurple-900/80 omori-dialogue-interactive">
+                  <h2 className="text-2xl md:text-3xl font-omori mb-4 md:mb-6 flex items-center gap-2 text-teal-400 text-glitch-hover">
+                    <User className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
+                    ABOUT ME
+                  </h2>
+                  <p className="text-base md:text-lg text-purple-200 mb-4">
+                    I'm a passionate student developer with a keen interest in web development, mobile applications, and
+                    artificial intelligence. My journey in programming began when I was 10, and I've been hooked ever
+                    since.
+                  </p>
 
-                    <p className="text-base md:text-lg text-purple-200 mb-6">
-                      As I prepare to enter university to study Computer Science, I'm excited to expand my knowledge and
-                      collaborate with like-minded individuals on innovative projects. I enjoy solving complex problems
-                      and creating elegant solutions that make a positive impact.
-                    </p>
+                  <p className="text-base md:text-lg text-purple-200 mb-6">
+                    As I prepare to enter university to study Computer Science, I'm excited to expand my knowledge and
+                    collaborate with like-minded individuals on innovative projects. I enjoy solving complex problems
+                    and creating elegant solutions that make a positive impact.
+                  </p>
+                  <div className="flex justify-center sm:justify-start">
                     <Button
                       className="bg-teal-500 hover:bg-teal-600 text-purple-950 font-omori btn-interactive"
                       asChild
@@ -264,35 +248,39 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 md:py-20 container relative">
+        <section id="skills" className="py-12 md:py-16 container px-4 sm:px-6 relative">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
+            <h2 className="text-xl md:text-3xl font-omori mb-6 md:mb-10 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
               <Code className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
               TECHNICAL SKILLS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               <ScrollReveal delay={200}>
                 <Card className="bg-darkPurple-900/80 border-2 border-purple-400 text-white omori-card card-interactive">
-                  <CardHeader>
-                    <CardTitle className="font-omori text-teal-400 text-glitch-hover">PYTHON</CardTitle>
-                    <CardDescription className="text-purple-200">
-                      Scripting, automation, web development (Django, Flask), data processing (Pandas, NumPy)
+                  <CardHeader className="p-4 md:p-6">
+                    <CardTitle className="font-omori text-teal-400 text-glitch-hover text-lg md:text-xl">
+                      PYTHON
+                    </CardTitle>
+                    <CardDescription className="text-purple-200 text-sm md:text-base">
+                      Scripting, automation, web development (Django, Flask), data processing
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
                     <div className="flex flex-wrap gap-2">
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">Django</Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">Flask</Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">Pandas</Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">NumPy</Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">
+                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover text-xs">
+                        Django
+                      </Badge>
+                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover text-xs">
+                        Flask
+                      </Badge>
+                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover text-xs">
+                        Pandas
+                      </Badge>
+                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover text-xs">
+                        NumPy
+                      </Badge>
+                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover text-xs">
                         Automation
-                      </Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">
-                        Telegram API
-                      </Badge>
-                      <Badge className="bg-darkPurple-800 hover:bg-purple-700 text-teal-200 shake-hover">
-                        Discord API
                       </Badge>
                     </div>
                   </CardContent>
@@ -358,7 +346,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <ScrollReveal>
               <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
                 <Briefcase className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
@@ -564,8 +552,8 @@ export default function Home() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="py-16 md:py-20 container relative">
-          <div className="container">
+        <section id="education" className="py-16 md:py-20 container px-4 sm:px-6 relative">
+          <div className="container px-4 sm:px-6">
             <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
               <BookOpen className="h-5 w-5 md:h-6 md:w-6" />
               EDUCATION & EXPERIENCE
@@ -579,7 +567,7 @@ export default function Home() {
 
         {/* Mini-Game Section */}
         <section id="game" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <ScrollReveal>
               <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
                 <Gamepad2 className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
@@ -606,7 +594,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400">
               <Mail className="h-5 w-5 md:h-6 md:w-6" />
               GET IN TOUCH
@@ -726,16 +714,16 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-purple-400/10 py-6 bg-darkPurple-950 theme-transition">
-        <div className="container flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-purple-300">
+      <footer className="border-t border-purple-400/10 py-4 md:py-6 bg-darkPurple-950 theme-transition">
+        <div className="container px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-xs md:text-sm text-purple-300">
             © {new Date().getFullYear()} Sukovatitsyn Alexey. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-purple-300 hover:text-white transition-colors">
+          <div className="flex items-center gap-4 mt-2 md:mt-0">
+            <Link href="#" className="text-xs md:text-sm text-purple-300 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-purple-300 hover:text-white transition-colors">
+            <Link href="#" className="text-xs md:text-sm text-purple-300 hover:text-white transition-colors">
               Terms of Service
             </Link>
           </div>

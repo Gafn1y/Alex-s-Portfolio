@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export const metadata = {
   title: "Sukovatitsyn Alexey | Developer Portfolio",
   description: "Personal portfolio for Sukovatitsyn Alexey, a software engineer and developer from Kazakhstan",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     generator: 'v0.dev'
 }
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
-          <div className="fixed top-4 right-4 z-50">
+          <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50">
             <ThemeToggle />
           </div>
           <div className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-500">

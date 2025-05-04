@@ -29,11 +29,12 @@ export default function Planet({
   const [isClicked, setIsClicked] = useState(false)
   const controls = useAnimation()
 
+  // Update the size mappings to be more mobile-friendly
   const sizeMap = {
-    tiny: "w-6 h-6 sm:w-8 sm:h-8",
-    small: "w-10 h-10 sm:w-12 sm:h-12",
-    medium: "w-14 h-14 sm:w-16 sm:h-16",
-    large: "w-20 h-20 sm:w-24 sm:h-24",
+    tiny: "w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8",
+    small: "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12",
+    medium: "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16",
+    large: "w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24",
   }
 
   const colorMap = {
@@ -160,7 +161,7 @@ export default function Planet({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-purple-900/80 px-2 py-1 rounded text-xs text-white whitespace-nowrap border border-purple-400 z-10"
+            className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 bg-purple-900/80 px-1 sm:px-2 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs text-white whitespace-nowrap border border-purple-400 z-10"
           >
             {type.charAt(0).toUpperCase() + type.slice(1)} Planet
           </motion.div>
