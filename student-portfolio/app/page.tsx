@@ -166,15 +166,15 @@ export default function Home() {
                     ABOUT ME
                   </h2>
                   <p className="text-base md:text-lg text-purple-200 mb-4">
-                    I'm a passionate student developer with a keen interest in web development, mobile applications, and
-                    artificial intelligence. My journey in programming began when I was 10, and I've been hooked ever
-                    since.
+                    I'm an enthusiastic student developer fascinated by web development, mobile app creation, and the
+                    potential of artificial intelligence. My programming journey began at age 10, sparking a passion
+                    that continues to drive me forward.
                   </p>
 
                   <p className="text-base md:text-lg text-purple-200 mb-6">
-                    As I prepare to enter university to study Computer Science, I'm excited to expand my knowledge and
-                    collaborate with like-minded individuals on innovative projects. I enjoy solving complex problems
-                    and creating elegant solutions that make a positive impact.
+                    As I embark on my Computer Science studies at university, I'm eager to deepen my technical knowledge
+                    and collaborate with fellow innovators. I thrive on tackling complex challenges and crafting
+                    elegant, impactful solutions that make a difference.
                   </p>
                   <div className="flex justify-center sm:justify-start">
                     <Button
@@ -208,7 +208,8 @@ export default function Home() {
                       PYTHON
                     </CardTitle>
                     <CardDescription className="text-purple-200 text-sm md:text-base">
-                      Scripting, automation, web development (Django, Flask), data processing
+                      Backend development, data analysis, automation tools, and web frameworks for building robust
+                      applications
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
@@ -237,7 +238,7 @@ export default function Home() {
                   <CardHeader>
                     <CardTitle className="font-omori text-pink-400 text-glitch-hover">C++</CardTitle>
                     <CardDescription className="text-purple-200">
-                      Algorithms, data structures, high-performance application development
+                      System-level programming, performance optimization, and embedded systems development
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -265,7 +266,8 @@ export default function Home() {
                   <CardHeader>
                     <CardTitle className="font-omori text-yellow-300 text-glitch-hover">JAVASCRIPT</CardTitle>
                     <CardDescription className="text-purple-200">
-                      Web development, working with frameworks (React, Vue), creating interactive user interfaces
+                      Frontend development with modern frameworks, interactive UI creation, and responsive web
+                      applications
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
