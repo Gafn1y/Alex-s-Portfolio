@@ -513,33 +513,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Mini-Game Section */}
-        <section id="game" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
-          <div className="container px-4 sm:px-6">
-            <ScrollReveal>
-              <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
-                <Gamepad2 className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
-                PLANET COLLECTOR MINI-GAME
-              </h2>
-              <div className="max-w-4xl mx-auto">
-                <Card className="bg-darkPurple-900/80 border-2 border-purple-400 text-white omori-card">
-                  <CardHeader>
-                    <CardTitle className="font-omori text-teal-400">PLANET COLLECTOR</CardTitle>
-                    <CardDescription className="text-purple-200">
-                      Click on the planets to collect them before time runs out! How many can you collect in 30 seconds?
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-[400px]">
-                      <PlanetMiniGame />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-
         {/* Contact Section */}
         <section id="contact" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
           <div className="container px-4 sm:px-6">
@@ -658,6 +631,33 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Mini-Game Section - Moved to the end */}
+        <section id="game" className="py-16 md:py-20 bg-darkPurple-900/20 relative">
+          <div className="container px-4 sm:px-6">
+            <ScrollReveal>
+              <h2 className="text-2xl md:text-3xl font-omori mb-8 md:mb-12 text-center flex items-center justify-center gap-2 text-teal-400 text-glitch-hover">
+                <Gamepad2 className="h-5 w-5 md:h-6 md:w-6 icon-interactive" />
+                PLANET COLLECTOR MINI-GAME
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <Card className="bg-darkPurple-900/80 border-2 border-purple-400 text-white omori-card">
+                  <CardHeader>
+                    <CardTitle className="font-omori text-teal-400">PLANET COLLECTOR</CardTitle>
+                    <CardDescription className="text-purple-200">
+                      Collect planets, avoid obstacles, and unlock power-ups in this cosmic mini-game!
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="h-[400px]">
+                      <PlanetMiniGame />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>
