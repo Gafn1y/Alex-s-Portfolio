@@ -67,18 +67,18 @@ export default function MobileMenu() {
                 EDUCATION
               </Link>
               <Link
-                href="#game"
-                className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
-                onClick={closeMenu}
-              >
-                MINI-GAME
-              </Link>
-              <Link
                 href="#contact"
                 className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
                 onClick={closeMenu}
               >
                 CONTACT
+              </Link>
+              <Link
+                href="/game"
+                className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive p-2"
+                onClick={closeMenu}
+              >
+                MINI-GAME
               </Link>
               <Button
                 variant="outline"

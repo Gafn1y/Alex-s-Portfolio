@@ -43,16 +43,16 @@ export default function Header() {
                 EDUCATION
               </Link>
               <Link
-                href="#game"
-                className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
-              >
-                MINI-GAME
-              </Link>
-              <Link
                 href="#contact"
                 className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
               >
                 CONTACT
+              </Link>
+              <Link
+                href="/game"
+                className="text-sm font-omori hover:text-teal-400 transition-colors nav-link-interactive"
+              >
+                GAME
               </Link>
             </nav>
           </div>

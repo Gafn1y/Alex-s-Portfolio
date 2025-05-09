@@ -9,7 +9,7 @@ import { notFound } from "next/navigation"
 import ScrollReveal from "@/components/scroll-reveal"
 import { useState, useEffect } from "react"
 import Planet from "@/components/planet"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 // Project data
 const projects = {
@@ -1009,35 +1009,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     yellow: "text-yellow-200",
   }
 
-  // Add a typing effect for code display with improved performance
+  // Display code without animation
   useEffect(() => {
-    setIsCodeLoaded(false)
-    const codeElements = document.querySelectorAll("pre code")
-
-    if (codeElements.length === 0) return
-
-    const element = codeElements[0]
-    const text = element.textContent || ""
-    element.textContent = ""
-
-    let i = 0
-    const chunkSize = 100 // Process text in chunks for better performance
-
-    const typeWriter = () => {
-      if (i < text.length) {
-        const end = Math.min(i + chunkSize, text.length)
-        element.textContent += text.substring(i, end)
-        i = end
-
-        if (i < text.length) {
-          requestAnimationFrame(typeWriter)
-        } else {
-          setIsCodeLoaded(true)
-        }
-      }
-    }
-
-    requestAnimationFrame(typeWriter)
+    setIsCodeLoaded(true)
   }, [activeFile])
 
   return (
@@ -1232,21 +1206,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   <pre className="text-sm text-purple-200 font-mono">
                     <code>{project.files[activeFile].content}</code>
                   </pre>
-                  <AnimatePresence>
-                    {!isCodeLoaded && (
-                      <motion.div
-                        className="flex justify-center mt-4"
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        <div className="inline-flex items-center px-4 py-2 bg-purple-800/50 rounded-md text-sm text-purple-200">
-                          <div className="mr-2 h-4 w-4 border-2 border-t-transparent border-purple-400 rounded-full animate-spin"></div>
-                          Loading code...
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               </CardContent>
             </Card>
